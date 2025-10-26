@@ -101,12 +101,31 @@ const closeConnection = async () => {
     try {
         await pool.end();
         console.log('✓ Database pool closed successfully');
-        
     } catch (error) {
-        
-    }
-}
+        console.error(`✗ Error closing database pool: ${error.message}`);
+        throw error;
+    };
+};
+
+/**
+ * Get pool statistics for monitoring
+ * Useful for debugging connection issues
+ * @returns {Object}
+*/
+const getPoolStats = () => {
+    return {
+        totalConnections: pool.pool._allConnections.length,
+        freeConnections: pool.pool._freeConnections.length,
+        queuedRequests: pool.pool._connectionQueue.length,
+    };
+};
 
 module.exports = {
     pool,
+    getConnection,
+    query,
+    testConnection,
+    transaction,
+    closeConnection,
+    getPoolStats,
 };
