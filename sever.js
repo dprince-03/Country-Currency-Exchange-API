@@ -8,6 +8,9 @@ const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const session = require('express-session');
 
+const countryRouter = require('./src/routes/country.routes');
+const { notFoundHandler, errorHandler } = require('./src/middlewares/errorHandler.middlewares');
+
 const app = express();
 const PORT = process.env.PORT || 5080;
 
@@ -101,12 +104,13 @@ app.get('/api/health', (req, res) => {
 });
 
 // api route
-
+app.use('/api', countryRouter);
 
 // ====================
 // Error Handling
 // ====================
-
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 // ====================
 // Server 

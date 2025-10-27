@@ -221,33 +221,33 @@ country-currency-exchange-api/
 
 #### 3.1 Countries Service
 
-- [ ] Create `src/services/countriesService.js`
-- [ ] Write function: `fetchAllCountries()`
-  - [ ] Use axios to call REST Countries API
-  - [ ] Set timeout (10 seconds)
-  - [ ] Parse response
-  - [ ] Handle network errors
-  - [ ] Return array of countries
+- [X] Create `src/services/countriesService.js`
+- [X] Write function: `fetchAllCountries()`
+  - [X] Use axios to call REST Countries API
+  - [X] Set timeout (10 seconds)
+  - [X] Parse response
+  - [X] Handle network errors
+  - [X] Return array of countries
 - [ ] Test function independently (console.log results)
 - [ ] Verify data structure matches expectations
 
 #### 3.2 Exchange Service
 
-- [ ] Create `src/services/exchangeService.js`
-- [ ] Write function: `fetchExchangeRates()`
-  - [ ] Use axios to call Exchange Rate API
-  - [ ] Set timeout (10 seconds)
-  - [ ] Parse response (rates are nested in `rates` object)
-  - [ ] Handle network errors
-  - [ ] Return rates object
+- [X] Create `src/services/exchangeService.js`
+- [X] Write function: `fetchExchangeRates()`
+  - [X] Use axios to call Exchange Rate API
+  - [X] Set timeout (10 seconds)
+  - [X] Parse response (rates are nested in `rates` object)
+  - [X] Handle network errors
+  - [X] Return rates object
 - [ ] Test function independently (console.log results)
 - [ ] Verify currency codes and rates structure
 
 #### 3.3 Error Handling for APIs
 
-- [ ] Add try-catch blocks
-- [ ] Return 503 error if API fails
-- [ ] Add detailed error messages
+- [X] Add try-catch blocks
+- [X] Return 503 error if API fails
+- [X] Add detailed error messages
 - [ ] Test timeout scenarios
 
 ---
@@ -256,28 +256,28 @@ country-currency-exchange-api/
 
 #### 4.1 Data Transformer Service
 
-- [ ] Create `src/services/dataTransformer.js`
-- [ ] Write function: `transformCountries(countries, exchangeRates)`
-  - [ ] Loop through each country
-  - [ ] Extract first currency code from currencies array
-  - [ ] Handle countries with no currencies (set to null)
-  - [ ] Match currency code with exchange rate
-  - [ ] Handle currencies not in exchange rates (set rate to null)
-  - [ ] Generate random multiplier (1000-2000)
-  - [ ] Calculate estimated_gdp = population × multiplier ÷ exchange_rate
-  - [ ] Handle null cases for GDP (set to 0 or null)
-  - [ ] Build transformed country object
-  - [ ] Return array of transformed countries
+- [X] Create `src/services/dataTransformer.js`
+- [X] Write function: `transformCountries(countries, exchangeRates)`
+  - [X] Loop through each country
+  - [X] Extract first currency code from currencies array
+  - [X] Handle countries with no currencies (set to null)
+  - [X] Match currency code with exchange rate
+  - [X] Handle currencies not in exchange rates (set rate to null)
+  - [X] Generate random multiplier (1000-2000)
+  - [X] Calculate estimated_gdp = population × multiplier ÷ exchange_rate
+  - [X] Handle null cases for GDP (set to 0 or null)
+  - [X] Build transformed country object
+  - [X] Return array of transformed countries
 - [ ] Test with sample data
 - [ ] Verify GDP calculations are correct
 
 #### 4.2 Helper Utilities
 
-- [ ] Create `src/utils/helpers.js`
-- [ ] Write function: `generateRandomMultiplier()`
-  - [ ] Return random number between 1000-2000
-- [ ] Write function: `formatTimestamp(date)`
-  - [ ] Return ISO 8601 format
+- [X] Create `src/utils/helpers.js`
+- [X] Write function: `generateRandomMultiplier()`
+  - [X] Return random number between 1000-2000
+- [X] Write function: `formatTimestamp(date)`
+  - [X] Return ISO 8601 format
 - [ ] Add any other helper functions needed
 
 #### 4.3 Currency Matching Algorithm
@@ -294,54 +294,54 @@ country-currency-exchange-api/
 
 #### 5.1 Controllers Setup
 
-- [ ] Create `src/controllers/countryController.js`
-- [ ] Create `src/controllers/statusController.js`
+- [X] Create `src/controllers/countryController.js`
+- [X] Create `src/controllers/statusController.js`
 
 #### 5.2 Routes Setup
 
-- [ ] Create `src/routes/countryRoutes.js`
-- [ ] Define all route paths (empty handlers for now)
+- [X] Create `src/routes/countryRoutes.js`
+- [X] Define all route paths (empty handlers for now)
 
 #### 5.3 Express App Setup
 
-- [ ] Create `src/app.js`
-  - [ ] Initialize Express app
-  - [ ] Add JSON middleware: `app.use(express.json())`
-  - [ ] Add route handlers
-  - [ ] Add error handler middleware (last)
-  - [ ] Export app
-- [ ] Create `server.js`
-  - [ ] Import app
-  - [ ] Start server on PORT from .env
-  - [ ] Log server start message
+- [X] Create `src/app.js`
+  - [X] Initialize Express app
+  - [X] Add JSON middleware: `app.use(express.json())`
+  - [X] Add route handlers
+  - [X] Add error handler middleware (last)
+  - [X] Export app
+- [X] Create `server.js`
+  - [X] Import app
+  - [X] Start server on PORT from .env
+  - [X] Log server start message
 
 #### 5.4 Build GET /status (Simplest First)
 
-- [ ] In `statusController.js`, write `getStatus()`
-  - [ ] Call `countryModel.getStatus()`
-  - [ ] Return JSON response
-  - [ ] Handle errors
+- [X] In `statusController.js`, write `getStatus()`
+  - [X] Call `countryModel.getStatus()`
+  - [X] Return JSON response
+  - [X] Handle errors
 - [ ] Test endpoint with Postman
 
 #### 5.5 Build GET /countries/:name
 
-- [ ] In `countryController.js`, write `getCountryByName()`
-  - [ ] Extract name from req.params
-  - [ ] Call `countryModel.getCountryByName(name)`
-  - [ ] Return 404 if not found
-  - [ ] Return country JSON if found
-  - [ ] Handle errors
+- [X] In `countryController.js`, write `getCountryByName()`
+  - [X] Extract name from req.params
+  - [X] Call `countryModel.getCountryByName(name)`
+  - [X] Return 404 if not found
+  - [X] Return country JSON if found
+  - [X] Handle errors
 - [ ] Test endpoint with Postman
 
 #### 5.6 Build GET /countries (With Filtering)
 
-- [ ] In `countryController.js`, write `getAllCountries()`
-  - [ ] Extract query params: region, currency, sort
-  - [ ] Build filters object
-  - [ ] Call `countryModel.getAllCountries(filters, sort)`
-  - [ ] Return array of countries
-  - [ ] Handle empty results
-  - [ ] Handle errors
+- [X] In `countryController.js`, write `getAllCountries()`
+  - [X] Extract query params: region, currency, sort
+  - [X] Build filters object
+  - [X] Call `countryModel.getAllCountries(filters, sort)`
+  - [X] Return array of countries
+  - [X] Handle empty results
+  - [X] Handle errors
 - [ ] Test endpoint with various filters:
   - [ ] `?region=Africa`
   - [ ] `?currency=NGN`
@@ -350,27 +350,27 @@ country-currency-exchange-api/
 
 #### 5.7 Build DELETE /countries/:name
 
-- [ ] In `countryController.js`, write `deleteCountry()`
-  - [ ] Extract name from req.params
-  - [ ] Call `countryModel.deleteCountryByName(name)`
-  - [ ] Return 404 if not found
-  - [ ] Return success message if deleted
-  - [ ] Handle errors
+- [X] In `countryController.js`, write `deleteCountry()`
+  - [X] Extract name from req.params
+  - [X] Call `countryModel.deleteCountryByName(name)`
+  - [X] Return 404 if not found
+  - [X] Return success message if deleted
+  - [X] Handle errors
 - [ ] Test endpoint with Postman
 
 #### 5.8 Build POST /countries/refresh (Most Complex)
 
-- [ ] In `countryController.js`, write `refreshCountries()`
-  - [ ] Call `countriesService.fetchAllCountries()`
-  - [ ] Call `exchangeService.fetchExchangeRates()` (use Promise.all for speed)
-  - [ ] Check if both APIs succeeded
-  - [ ] Call `dataTransformer.transformCountries(countries, rates)`
-  - [ ] Call `countryModel.upsertCountries(transformedData)`
-  - [ ] Update last_refreshed_at timestamp
-  - [ ] Trigger image generation (next phase)
-  - [ ] Return success message with count
-  - [ ] Handle API failures (return 503)
-  - [ ] Handle database errors
+- [X] In `countryController.js`, write `refreshCountries()`
+  - [X] Call `countriesService.fetchAllCountries()`
+  - [X] Call `exchangeService.fetchExchangeRates()` (use Promise.all for speed)
+  - [X] Check if both APIs succeeded
+  - [X] Call `dataTransformer.transformCountries(countries, rates)`
+  - [X] Call `countryModel.upsertCountries(transformedData)`
+  - [X] Update last_refreshed_at timestamp
+  - [X] Trigger image generation (next phase)
+  - [X] Return success message with count
+  - [X] Handle API failures (return 503)
+  - [X] Handle database errors
 - [ ] Test endpoint thoroughly
 - [ ] Verify database records are updated/inserted correctly
 - [ ] Test with empty database
@@ -382,38 +382,38 @@ country-currency-exchange-api/
 
 #### 6.1 Image Service
 
-- [ ] Create `src/services/imageService.js`
-- [ ] Ensure `cache/` directory exists (create programmatically if not)
-- [ ] Write function: `generateSummaryImage(totalCount, topCountries, timestamp)`
-  - [ ] Import canvas library
-  - [ ] Create canvas (800x600px)
-  - [ ] Get 2D context
-  - [ ] Set background color (white)
-  - [ ] Draw title: "Country Currency Summary"
-  - [ ] Draw total count text
-  - [ ] Draw "Top 5 Countries by GDP" header
-  - [ ] Draw table with country names and GDPs
-  - [ ] Draw timestamp at bottom
-  - [ ] Save to `cache/summary.png`
-  - [ ] Handle file system errors
+- [X] Create `src/services/imageService.js`
+- [X] Ensure `cache/` directory exists (create programmatically if not)
+- [X] Write function: `generateSummaryImage(totalCount, topCountries, timestamp)`
+  - [X] Import canvas library
+  - [X] Create canvas (800x600px)
+  - [X] Get 2D context
+  - [X] Set background color (white)
+  - [X] Draw title: "Country Currency Summary"
+  - [X] Draw total count text
+  - [X] Draw "Top 5 Countries by GDP" header
+  - [X] Draw table with country names and GDPs
+  - [X] Draw timestamp at bottom
+  - [X] Save to `cache/summary.png`
+  - [X] Handle file system errors
 - [ ] Test image generation separately
 - [ ] Open generated image to verify appearance
 
 #### 6.2 Integrate Image Generation
 
-- [ ] In `countryController.refreshCountries()`:
-  - [ ] After successful database save
-  - [ ] Fetch top 5 countries by GDP
-  - [ ] Call `imageService.generateSummaryImage()`
-  - [ ] Continue even if image generation fails (don't break refresh)
+- [X] In `countryController.refreshCountries()`:
+  - [X] After successful database save
+  - [X] Fetch top 5 countries by GDP
+  - [X] Call `imageService.generateSummaryImage()`
+  - [X] Continue even if image generation fails (don't break refresh)
 
 #### 6.3 Add GET /countries/image Endpoint
 
-- [ ] In `countryController.js`, write `getImage()`
-  - [ ] Check if `cache/summary.png` exists
-  - [ ] If exists: serve file with `res.sendFile()`
-  - [ ] If not exists: return 404 with error message
-  - [ ] Handle errors
+- [X] In `countryController.js`, write `getImage()`
+  - [X] Check if `cache/summary.png` exists
+  - [X] If exists: serve file with `res.sendFile()`
+  - [X] If not exists: return 404 with error message
+  - [X] Handle errors
 - [ ] Test endpoint after running refresh
 - [ ] Test endpoint before running refresh (should return 404)
 
@@ -423,48 +423,48 @@ country-currency-exchange-api/
 
 #### 7.1 Validation Middleware
 
-- [ ] Create `src/middleware/validator.js`
-- [ ] Write function: `validateRefresh()`
-  - [ ] No validation needed (POST with no body)
-  - [ ] Just pass through
-- [ ] Write function: `validateCountryName()`
-  - [ ] Check if name parameter exists
-  - [ ] Check if name is not empty
-  - [ ] Return 400 if invalid
-- [ ] Add validation to appropriate routes
+- [X] Create `src/middleware/validator.js`
+- [X] Write function: `validateRefresh()`
+  - [X] No validation needed (POST with no body)
+  - [X] Just pass through
+- [X] Write function: `validateCountryName()`
+  - [X] Check if name parameter exists
+  - [X] Check if name is not empty
+  - [X] Return 400 if invalid
+- [X] Add validation to appropriate routes
 
 #### 7.2 Error Handler Middleware
 
-- [ ] Create `src/middleware/errorHandler.js`
-- [ ] Write global error handler:
-  - [ ] Catch all errors passed via next(error)
-  - [ ] Determine status code (default 500)
-  - [ ] Format error response:
+- [X] Create `src/middleware/errorHandler.js`
+- [X] Write global error handler:
+  - [X] Catch all errors passed via next(error)
+  - [X] Determine status code (default 500)
+  - [X] Format error response:
     ```json
     {
       "error": "Error message",
       "details": "Additional details if available"
     }
     ```
-  - [ ] Log error to console (for debugging)
-  - [ ] Never expose sensitive info (database errors, stack traces)
-- [ ] Add error handler as last middleware in `app.js`
+  - [X] Log error to console (for debugging)
+  - [X] Never expose sensitive info (database errors, stack traces)
+- [X] Add error handler as last middleware in `app.js`
 
 #### 7.3 Async Error Handling
 
-- [ ] Review all async route handlers
-- [ ] Ensure all use try-catch OR use async wrapper
-- [ ] Option: Create `src/middleware/asyncHandler.js`
-  - [ ] Wrap async functions to catch errors automatically
-  - [ ] Use in routes: `router.get('/countries', asyncHandler(getAllCountries))`
+- [X] Review all async route handlers
+- [X] Ensure all use try-catch OR use async wrapper
+- [X] Option: Create `src/middleware/asyncHandler.js`
+  - [X] Wrap async functions to catch errors automatically
+  - [X] Use in routes: `router.get('/countries', asyncHandler(getAllCountries))`
 
 #### 7.4 Test Error Scenarios
 
-- [ ] Invalid country name (404)
-- [ ] External API timeout (503)
-- [ ] Database connection failure (500)
-- [ ] Missing required fields (400)
-- [ ] Malformed request body (400)
+- [X] Invalid country name (404)
+- [X] External API timeout (503)
+- [X] Database connection failure (500)
+- [X] Missing required fields (400)
+- [X] Malformed request body (400)
 
 ---
 
